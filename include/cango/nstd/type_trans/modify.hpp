@@ -1,0 +1,44 @@
+#ifndef INCLUDE_CANGO_NSTD_TYPE_TRANS_MODIFY
+#define INCLUDE_CANGO_NSTD_TYPE_TRANS_MODIFY
+
+#include "remove_ref_cv.hpp"
+
+namespace cango::nstd::type_trans {
+template<typename T>
+struct modify {
+    using type = T;
+    using result = type;
+
+    using add_volatile = modify<volatile type>;
+    using add_v = add_volatile;
+
+    using add_const = modify<const type>;
+    using add_c = add_const;
+
+    using add_left_value_reference = modify<type &>;
+    using add_lv_ref = add_left_value_reference;
+
+    using add_right_value_reference = modify<type &&>;
+    using add_rv_ref = add_right_value_reference;
+
+    using sub_volatile = modify<remove_v_t<type> >;
+    using sub_v = sub_volatile;
+
+    using sub_const = modify<remove_c_t<type> >;
+    using sub_c = sub_const;
+
+    using sub_reference = modify<remove_ref_t<type> >;
+    using sub_ref = sub_reference;
+
+    using sub_cv = modify<remove_cv_t<type> >;
+    using sub_ref_cv = modify<remove_ref_cv_t<type> >;
+
+    template<typename T1>
+    using same_as = is_same<type, T1>;
+
+    template<typename T1>
+    static constexpr bool same_as_v = same_as<T1>::value;
+};
+}
+
+#endif//INCLUDE_CANGO_NSTD_TYPE_TRANS_MODIFY
