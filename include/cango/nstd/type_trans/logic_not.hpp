@@ -5,17 +5,19 @@
 #include "true_tv.hpp"
 
 namespace cango::nstd::type_trans {
-template<typename T>
+template<bool V>
 struct logic_not;
 
 template<>
-struct logic_not<true_tv> : false_tv {};
+struct logic_not<true> : false_tv {};
 
 template<>
-struct logic_not<false_tv> : true_tv {};
+struct logic_not<false> : true_tv {};
 
-template<typename T>
-inline constexpr bool logic_not_v = logic_not<T>::value;
+/// @brief 获取给定参数的逻辑非的结果
+/// @tparam V 布尔值
+template<bool V> 
+inline constexpr bool logic_not_v = logic_not<V>::value;
 }
 
 #endif//INCLUDE_CANGO_NSTD_TYPE_TRANS_LOGIC_NOT

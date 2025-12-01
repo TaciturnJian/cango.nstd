@@ -4,7 +4,6 @@
 #include "type_trans/just_type.hpp"
 #include "type_trans/just_value.hpp"
 
-#include "type_trans/bool_type_value.hpp"
 #include "type_trans/false_tv.hpp"
 #include "type_trans/true_tv.hpp"
 

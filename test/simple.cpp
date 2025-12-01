@@ -1,5 +1,7 @@
 #include <cango/nstd.hpp>
 
+#include <iostream>
+
 using namespace cango::nstd::type_trans;
 
 static_assert(modify<int>::add_const::same_as_v<const int>);
@@ -16,6 +18,7 @@ static_assert(pile<int, float, double>::contains_type<int>);
 static_assert(is_same_v<pile<int, float, double>::type_at<2>, double>);
 
 int main() {
-    constexpr auto nums = make_pile(1, 'c', 3.0);
-    return nums.get<2>();
+    auto nums = make_pile(1, 2, 3.0, 4, []{ std::cout << "Hello world!\n"; }, make_pile(0));
+    nums.at<4>()();
+    return nums.at<5>().top;
 }

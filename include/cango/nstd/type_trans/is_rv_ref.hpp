@@ -14,6 +14,8 @@ struct is_right_value_reference<T &&> : true_tv {};
 template<typename T>
 using is_rv_ref = is_right_value_reference<T>;
 
+/// @brief 判断给定类型是否为右值引用
+/// @tparam T 待检查类型
 template<typename T>
 inline constexpr bool is_right_value_reference_v = is_rv_ref<T>::value;
 

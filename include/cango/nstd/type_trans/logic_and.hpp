@@ -5,17 +5,19 @@
 #include "true_tv.hpp"
 
 namespace cango::nstd::type_trans {
-template<typename...>
+template<bool...>
 struct logic_and : true_tv {};
 
-template<typename... TRest>
-struct logic_and<false_tv, TRest...> : false_tv {};
+template<bool... Rest>
+struct logic_and<false, Rest...> : false_tv {};
 
-template<typename... TRest>
-struct logic_and<true_tv, TRest...> : logic_and<TRest...> {};
+template<bool... Rest>
+struct logic_and<true, Rest...> : logic_and<Rest...> {};
 
-template<typename... TList>
-inline constexpr bool logic_and_v = logic_and<TList...>::value;
+/// @brief 获取给定参数的逻辑与的结果
+/// @tparam List 布尔值列表
+template<bool... List>
+inline constexpr bool logic_and_v = logic_and<List...>::value;
 }
 
 #endif//INCLUDE_CANGO_NSTD_TYPE_TRANS_LOGIC_AND

@@ -1,10 +1,11 @@
 #ifndef INCLUDE_CANGO_NSTD_TYPE_TRANS_FALSE_TV
 #define INCLUDE_CANGO_NSTD_TYPE_TRANS_FALSE_TV
 
-#include "bool_type_value.hpp"
+#include "type_value.hpp"
 
 namespace cango::nstd::type_trans {
-using false_type_value = bool_type_value<false>;
+/// @brief 逻辑假对应的类型
+using false_type_value = type_value<bool, false>;
 using false_tv = false_type_value;
 }
 

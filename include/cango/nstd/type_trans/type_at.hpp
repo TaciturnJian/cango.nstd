@@ -21,6 +21,9 @@ struct type_at<N> {
     using is_found = false_tv;
 };
 
+/// @brief 给定目标类型列表中位于下标 N 位置的类型
+/// @tparam N 下标
+/// @tparam TList 类型列表
 template<unsigned int N, typename... TList>
 using type_at_t = type_at<N, TList...>::type;
 }

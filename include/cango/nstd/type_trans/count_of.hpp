@@ -13,6 +13,8 @@ struct count_of<N> : just_value<unsigned int, N> {};
 template<unsigned int N, typename TFirst, typename... TRest>
 struct count_of<N, TFirst, TRest...> : count_of<N + 1, TRest...> {};
 
+/// @brief 计算给定类型列表的长度
+/// @tparam TList 类型列表
 template<typename... TList>
 inline constexpr unsigned int count_of_v = count_of<0, TList...>::value;
 }

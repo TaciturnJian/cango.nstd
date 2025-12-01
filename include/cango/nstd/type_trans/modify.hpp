@@ -4,6 +4,7 @@
 #include "remove_ref_cv.hpp"
 
 namespace cango::nstd::type_trans {
+/// @brief 用于修改目标类型的工具，装载目标类型后可以像命名空间一样调用静态成员，然后通过 result 成员获取结果
 template<typename T>
 struct modify {
     using type = T;
