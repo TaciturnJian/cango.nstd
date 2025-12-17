@@ -16,4 +16,4 @@ struct is_same<T, T> : true_tv {};
 /// @tparam TR 待检查的类型
 template<typename TL, typename TR>
 inline constexpr bool is_same_v = is_same<TL, TR>::value;
-};
+}

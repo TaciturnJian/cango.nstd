@@ -10,4 +10,4 @@ struct target_at {
     template<typename T1>
     using is_target = is_same<T1, T>;
 };
-};
+}

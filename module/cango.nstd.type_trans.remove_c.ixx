@@ -19,4 +19,4 @@ using remove_const_t = remove_c<T>::type;
 
 template<typename T>
 using remove_c_t = remove_const_t<T>;
-};
+}

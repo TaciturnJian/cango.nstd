@@ -19,4 +19,4 @@ using remove_volatile_t = remove_v<T>::type;
 
 template<typename T>
 using remove_v_t = remove_volatile_t<T>;
-};
+}

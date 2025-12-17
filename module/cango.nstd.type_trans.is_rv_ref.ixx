@@ -21,4 +21,4 @@ inline constexpr bool is_right_value_reference_v = is_rv_ref<T>::value;
 
 template<typename T>
 inline constexpr bool is_rv_ref_v = is_right_value_reference_v<T>;
-};
+}

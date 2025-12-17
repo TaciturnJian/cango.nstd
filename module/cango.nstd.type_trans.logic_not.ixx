@@ -17,4 +17,4 @@ struct logic_not<false> : true_tv {};
 /// @tparam V 布尔值
 template<bool V>
 inline constexpr bool logic_not_v = logic_not<V>::value;
-};
+}

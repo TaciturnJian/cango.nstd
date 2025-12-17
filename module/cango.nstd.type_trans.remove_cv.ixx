@@ -11,4 +11,4 @@ using remove_cv = remove_v<remove_c_t<T> >;
 /// @tparam T 目标类型
 template<typename T>
 using remove_cv_t = remove_cv<T>::type;
-};
+}

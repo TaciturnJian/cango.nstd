@@ -22,4 +22,4 @@ using remove_reference_t = remove_ref<T>::type;
 
 template<typename T>
 using remove_ref_t = remove_reference_t<T>;
-};
+}

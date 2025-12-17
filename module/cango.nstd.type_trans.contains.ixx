@@ -12,4 +12,4 @@ using contains = any_of<target_at<TTarget>::template is_target, false, TList...>
 /// @tparam TList 待检查的类型列表
 template<typename TTarget, typename... TList>
 inline constexpr bool contains_v = contains<TTarget, TList...>::value;
-};
+}

@@ -8,4 +8,4 @@ export namespace cango {
 /// @tparam T 目标的类型
 template<typename T>
 constexpr remove_ref_t<T> &&move(T &&t) noexcept { return static_cast<remove_ref_t<T> &&>(t); }
-};
+}

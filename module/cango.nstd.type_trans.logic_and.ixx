@@ -18,4 +18,4 @@ struct logic_and<true, Rest...> : logic_and<Rest...> {};
 /// @tparam List 布尔值列表
 template<bool... List>
 inline constexpr bool logic_and_v = logic_and<List...>::value;
-};
+}

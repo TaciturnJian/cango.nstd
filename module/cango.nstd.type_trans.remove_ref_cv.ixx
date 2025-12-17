@@ -11,4 +11,4 @@ using remove_ref_cv = remove_cv<remove_ref_t<T> >;
 /// @tparam T 目标类型
 template<typename T>
 using remove_ref_cv_t = remove_ref_cv<T>::type;
-};
+}

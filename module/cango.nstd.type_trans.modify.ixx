@@ -45,4 +45,4 @@ struct modify {
     template<typename T1>
     static constexpr bool same_as_v = same_as<T1>::value;
 };
-};
+}

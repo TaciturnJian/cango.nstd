@@ -17,4 +17,4 @@ struct logic_or<false, Rest...> : logic_or<Rest...> {};
 /// @tparam List 布尔值列表
 template<bool... List>
 inline constexpr bool logic_or_v = logic_or<List...>::value;
-};
+}
